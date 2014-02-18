@@ -1,0 +1,14 @@
+<h3>Set Instance Logo</h3>
+<p>
+Current logo:<br>
+<% if url = current_instance.logo.url %>
+  <%= image_tag url %>
+<% else %>
+  None
+<% end %>
+</p>
+<%= form_for current_instance, url: instance_logos_path, method: :post do |f| %>
+  <%= f.error_messages %>
+  <%= f.file_field :logo %><br>
+  <%= f.submit 'Upload file' %>
+<% end %>

@@ -1,0 +1,19 @@
+<h3>Create New Instance</h3>
+<%= form_for @instance do |instance| %>
+  <%= instance.error_messages %>
+  
+  <p>
+    <%= instance.label :name %><br>
+    <%= instance.text_field :name %>
+  </p>
+  
+  <%= instance.fields_for :owner, @user do |owner| %>
+    <p>
+      <%= owner.label :email %><br>
+      <%= owner.text_field :email %>
+    </p>
+      
+  <% end %>
+  
+  <%= instance.submit %>
+<% end %>

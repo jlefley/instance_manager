@@ -1,0 +1,14 @@
+<%= form_for resource, as: resource_name, url: instance_manager.private_user_confirm_path do |f| %>
+  <h2>Create password to complete registration</h2>
+  <%= devise_error_messages! %>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %><br>
+  </p>
+  <%= f.hidden_field :confirmation_token %>
+  <%= f.submit 'Confirm Account' %>
+<% end %>

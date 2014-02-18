@@ -1,0 +1,21 @@
+<h1 style="text-align:center;">Oneslate private instance login</h1>
+<div class="border-form-div">
+<h2 style="margin:10px,0px,15px,0px;display:inline;">Please log in:</h2>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in", :class=>'btn btn-primary' %></div>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+</div>
+
+<div style='z-index:-1;background:url("https://oneslate.com/hosted/rockywall.png");position:absolute;top:0;bottom:0;left:0;right:0;background-repeat:repeat;'>&nbsp;</div>

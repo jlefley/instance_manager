@@ -1,0 +1,43 @@
+<% if flash[:notice].present? %>
+  <div class='flash notice'><%= flash[:notice] %></div>
+<% end %>
+<%= form_for @user, url: instance_manager.accounts_url do |user| %>
+  <%= user.error_messages %>
+  <p>
+    <%= user.label :email %><br>
+    <%= user.text_field :email %>
+  </p>
+  <p>
+    <%= user.label :password %><br>
+    <%= user.password_field :password %>
+  </p>
+  <p>
+    <%= user.label :password_confirmation %><br>
+    <%= user.password_field :password_confirmation %>
+  </p>
+
+  <%= user.fields_for :instances, @instance do |instance| %>
+    <p>
+      <%= instance.label :name %><br>
+      <%= instance.text_field :name %>.oneslate.com
+    </p>
+  <% end %>
+
+  <%= user.fields_for :account, @account do |account| %>
+    <p>
+      <%= account.label :first_name %>
+      <%= account.text_field :first_name %>
+      <%= account.label :last_name %>
+      <%= account.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= account.label :organization %>
+      <%= account.text_field :organization %>
+      <%= account.label :phone_number %>
+      <%= account.text_field :phone_number %>
+    </p>
+  <% end %>
+
+<%= user.submit 'Create Account' %>
+<% end %>

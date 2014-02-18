@@ -1,0 +1,7 @@
+<html>
+  <p>Hello <%= @resource.username %></p>
+
+  <p>You can confirm your 1Slate.com account email through the link below:</p>
+
+  <p><%= link_to 'Confirm email address', confirmation_url(@resource, :confirmation_token => @token) %></p>
+</html>

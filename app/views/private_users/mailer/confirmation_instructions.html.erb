@@ -1,0 +1,7 @@
+<html>
+  <p>Hello <%= @email %>!</p>
+
+  <p>You can confirm your Oneslate private instance account email through the link below:</p>
+
+  <p><%= link_to 'Confirm email address', confirmation_url(@resource, confirmation_token: @token, host: Thread.current[:request_host]) %></p>
+</html>

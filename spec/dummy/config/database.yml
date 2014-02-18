@@ -1,0 +1,15 @@
+development:
+  adapter: postgres
+  encoding: unicode
+  database: instance_manager_development
+  pool: 5
+  username: oneslate_user
+  password: oneslate_db
+
+test:
+  adapter: postgres
+  encoding: unicode
+  database: instance_manager_test 
+  pool: 5
+  username: oneslate_user
+  password: oneslate_db
